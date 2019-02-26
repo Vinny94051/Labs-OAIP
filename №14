@@ -51,6 +51,7 @@ void Print(Quene *current) {
 	Print(current->next);
 }
 
+
 void DeleteAll(Quene *current) {
 	if (current) {
 		DeleteAll(current->next);
@@ -61,7 +62,7 @@ int main() {
 	srand(time(NULL));
 
 	Quene *begin = NULL, *end = NULL;
-	const int size = 15;
+	const int size = 9;
 
 	for (int i = 0; i < size; i++)
 	{
@@ -86,12 +87,21 @@ int main() {
 		current = current->next;
 	}
 
-	Quene *maxElement = new Quene;
+	Quene *maxElement = new Quene; //Переставление максимального элемента на первое место
 	maxElement->value = max->value;
-	maxElement->next = NULL;
 	maxElement->next = begin;
-	Print(maxElement);
+	begin = maxElement;
+	Print(begin);
 	
+									//Удаление двух препоследних элементов очереди
+	current = maxElement;
+	while (current->next->next->next!= end) {
+		current = current->next;
+	}
+	current->next = end;
+	
+	cout << endl;
+	Print(begin);
 	DeleteAll(begin);
 
 	system("pause");
