@@ -1,0 +1,43 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+struct rabochie {
+char fio[100];
+int nomer;
+int chas;
+double tarif;
+} bank[100];
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int n,i,j;
+	cout<<"vvedite kolichestvo = ";
+	cin>>n;
+	for (i=0; i<n; i++)
+	{
+		cout<<"vvedite FIO: ";
+		cin>>bank[i].fio;
+		cout<<"vvedite nomer: ";
+		cin>>bank[i].nomer;
+		cout<<"Vvedite chasi: ";
+		cin>>bank[i].chas;
+		cout<<"vvedite tarif: ";
+		cin>>bank[i].tarif;
+	}
+	for(i=0; i<n; i++)
+	{
+		cout<<bank[i].fio<<setw(15)<<"nomer = "<<bank[i].nomer<<endl;
+		if (bank[i].chas>144)
+			cout<<"kolichestvo = "<<bank[i].tarif*(2*bank[i].chas-144)*0.88;
+		else
+			cout<<"kolichestvo = "<<bank[i].tarif*bank[i].chas*0.88;
+		cout<<endl;
+	}
+	system("pause");
+	return 0;
+}
+

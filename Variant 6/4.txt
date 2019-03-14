@@ -1,0 +1,42 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#include "math.h"
+#include <string>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int k,n,i,l;
+	cout<<"vvedite kolichestvo chisel k=";
+		cin>>k;
+	int *a=new int[k];
+	int *b=new int[k];
+	cout<<"ukazhite sdwig n=";
+		cin>>n;
+	cout<<"\nPerviy massiv:";
+	for (i=0;i<k;i++)
+	{
+		a[i]=rand() %3;
+		cout<<a[i]<<"";
+	}
+	for (i=0;i<k;i++)
+	{
+		l=i-n;
+		if(l<0)
+		{
+			l=k+l;
+		}
+		b[l]=a[i];
+	}
+	cout<<"\nResult:";
+	for (l=0; l<k; l++)
+	{
+		cout<<b[l]<<"";
+	}
+	cout<<"\n\n";
+	system("pause");
+	return 0;
+}
+
