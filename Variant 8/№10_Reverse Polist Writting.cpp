@@ -45,7 +45,7 @@ int main() {
 		case '*': {
 			while (outPutStack[0] == '*' || outPutStack[0] == '/') {
 				outPut.push_back(outPutStack[0]);
-				outPutStack.erase(0,1);
+				outPutStack.erase(0, 1);
 			}
 			outPutStack.insert(outPutStack.begin(), '*');
 			break;
@@ -57,17 +57,17 @@ int main() {
 		case ')':
 		{
 			outPutStack.insert(outPutStack.begin(), ')');
-			
+
 			int counter = 0;
 			while (outPutStack[counter] != '(') {
-				if (outPutStack[counter] != ')') { 
+				if (outPutStack[counter] != ')') {
 					outPut.push_back(outPutStack[counter]);
 					outPutStack.erase(counter, 1);
 					counter--;
 				}
 				counter++;
 			}
-			
+
 			outPutStack.erase(outPutStack.find('('), 1);
 			outPutStack.erase(outPutStack.find(')'), 1);
 			break;
@@ -76,7 +76,7 @@ int main() {
 		{
 			break;
 		}
-		default :
+		default:
 			outPut += inPut[i];
 		}
 	}
@@ -94,7 +94,7 @@ int main() {
 	for (int i = 0; i < outPut.size(); i++)
 	{
 		if (outPut[i] != '+' && outPut[i] != '/' && outPut[i] != '*' && outPut[i] != '-') {
-			
+
 			if (outPut[i] == 'a')
 				array[counter] = a;
 			else if (outPut[i] == 'b')
@@ -105,28 +105,28 @@ int main() {
 				array[counter] = d;
 			else if (outPut[i] == 'e')
 				array[counter] = e;
-			
+
 			counter++;
-			
+
 		}
 		else {
 			switch (outPut[i])
 			{
 			case'+':
 				counter--;
-				array[counter - 1] = array[counter-1] + array[counter];
+				array[counter - 1] = array[counter - 1] + array[counter];
 				break;
 			case'-':
 				counter--;
-				array[counter - 1] = array[counter-1] - array[counter];
+				array[counter - 1] = array[counter - 1] - array[counter];
 				break;
 			case'*':
 				counter--;
-				array[counter - 1] = array[counter-1] * array[counter];
+				array[counter - 1] = array[counter - 1] * array[counter];
 				break;
 			case'/':
 				counter--;
-				array[counter - 1] = array[counter-1] / array[counter];
+				array[counter - 1] = array[counter - 1] / array[counter];
 				break;
 			default:
 				cout << "error";
@@ -136,7 +136,10 @@ int main() {
 	}
 	cout << array[0] << endl;
 	cout << endl;
+	
 	system("pause");
+	exit(0);
+	delete array;
 	return 0;
 }
 
