@@ -38,7 +38,7 @@ void GoToXY(short x, short y)
 	SetConsoleCursorPosition(StdOut, coord);
 }
 
-void print(TreeSet *root, short x, short y, short a, char c) {
+void print(TreeSet *root, short x, short y, short a, char c) { //This fuction work uncorrectly. Print less element than tree has.
 	if (root)
 	{
 		if (a>0 && c != 'k')
