@@ -31,7 +31,6 @@ int interpolationSearch(employee *list, int dateOfStart, int listSize) {
 			cout << "We have no it" << endl;
 			return 0; }
 		if (list[low].dateOfstart == list[high].dateOfstart) {
-			cout <<"hui " << list[low].dateOfstart << endl;
 			if (list[low].dateOfstart == dateOfStart) { 
 				cout << "his number is : " << low << endl;
 				return low;
@@ -55,7 +54,7 @@ int interpolationSearch(employee *list, int dateOfStart, int listSize) {
 		}
 		counter++;
 	}
-	cout << "We have no this employee"<<pivot << endl;
+	cout << "We have no this employee" << endl;
 }
 
 void stupidSort(employee *array, int size);
