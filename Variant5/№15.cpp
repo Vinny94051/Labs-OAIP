@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h>
 #include <ctime>
 
 using namespace std;
@@ -108,7 +107,6 @@ void cycleMove(QueneTwo *head, int size, QueneTwo *end) {
 	int *quene = new int[size+2];
 	QueneTwo *t = head;
 	quene[0] = end->value;
-	cout << "end:(start)" << end->value << endl;
 	int counter = 1;
 	while (t) {
 		quene[counter] = t->value;
